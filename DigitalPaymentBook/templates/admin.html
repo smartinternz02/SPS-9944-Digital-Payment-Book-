@@ -1,0 +1,34 @@
+{% extends 'nav.html' %}
+{% block content %}
+<br>
+<h5 class="ml-2 text-center">PENDING PAYEMENTS</h5>
+<div>
+    <table class="table table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Purchase Id</th>
+          <th scope="col">User ID</th>
+          <th scope="col">Item Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Amount Paid</th>
+          <th scope="col">Purchase Date</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+         {% for col in pending_payments %}
+            <tr>
+              <td>{{col[0]}}</td>
+              <td>{{col[1]}}</td>
+              <td>{{col[2]}}</td>
+              <td>{{col[3]}}</td>
+              <td>{{col[4]}}</td>
+              <td>{{col[5]}}</td>
+              <td><a href="/sendmail/{{col[0]}}" class="btn btn-outline-dark">Send Remainder</a></td>
+            </tr>  
+       {% endfor %}
+      </tbody>
+    </table>
+</div>
+<br>
+<br>{% endblock %}

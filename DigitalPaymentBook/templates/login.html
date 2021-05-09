@@ -1,0 +1,35 @@
+{% extends 'intro.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+    <div class="card">
+    <header class="card-header">
+      <a href="/register" class="float-right btn btn-outline-primary mt-1">Register</a>
+      <h4 class="card-title mt-2">Log In</h4>
+    </header>
+    <article class="card-body">
+    <form method="POST">
+      <div class="form-row">
+        <div class="col form-group">
+          <label>Email</label>   
+            <input type="Email" name="email" class="form-control" placeholder="Enter Your Email" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col form-group">
+          <label>Password</label>
+          <input type="password" name="password" class="form-control" placeholder="Enter a Password" required>
+        </div>
+      </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block"> Log In  </button>
+        </div>         
+    </form>
+    </article>
+    <div class="border-top card-body text-center">Don't Have an account?  <a href="/register">Register</a></div>
+    <div class="border-top card-body text-center"><b>{{ msg }}</b></div>  
+    </div>
+    </div> 
+    </div>
+    </div> 
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends 'navbar.html' %}
+{% block content %}
+<style>
+
+.card {
+    width: 600px;
+    border: none;
+    border-radius: 10px;
+    background-color: #fff
+}
+
+.stats {
+    background: #f2f5f8 !important;
+    color: #000 !important
+}
+
+.parts {
+    font-size: 15px;
+    color: #a1aab9
+}
+
+.number {
+    font-weight: 700
+}
+
+
+</style>
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card p-3">
+        <div class="d-flex align-items-center">
+            <div class="ml-3 w-100">
+                <h4 class="mb-0 mt-0">Welcome {{user_details[0][0]}}</h4>
+                <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+                    <div class="d-flex flex-column"> <span class="parts">Email ID</span> <span class="number">{{user_details[0][1]}}</span> </div>
+                    <div class="d-flex flex-column"> <span class="parts">Phone Number</span> <span class="number">{{user_details[0][2]}}</span> </div>
+                    <div class="d-flex flex-column"> <span class="parts">User ID</span> <span class="number">{{ userid }}</span> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+<h5 class="ml-2 text-center">YOUR PURCHASE HISTORY</h5>
+<div>
+    <table class="table table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Purchase Id</th>
+          <th scope="col">Item Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Amount Paid</th>
+          <th scope="col">Purchase Date</th>
+        </tr>
+      </thead>
+      <tbody>
+         {% for col in purchase_details %}
+            <tr>
+              <td>{{col[0]}}</td>
+              <td>{{col[2]}}</td>
+              <td>{{col[3]}}</td>
+              <td>{{col[4]}}</td>
+              <td>{{col[5]}}</td>
+            </tr>  
+       {% endfor %}
+      </tbody>
+    </table>
+</div>
+<br>
+<br>
+<h5 class="ml-2 text-center">YOUR PENDING PAYMENTS</h5>
+<div>
+    <table class="table table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Purchase Id</th>
+          <th scope="col">Item Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Amount Paid</th>
+          <th scope="col">Purchase Date</th>
+        </tr>
+      </thead>
+      <tbody>
+         {% for col in pending_payments %}
+            <tr>
+              <td>{{col[0]}}</td>
+              <td>{{col[2]}}</td>
+              <td>{{col[3]}}</td>
+              <td>{{col[4]}}</td>
+              <td>{{col[5]}}</td>
+            </tr>  
+       {% endfor %}
+      </tbody>
+    </table>
+</div>
+{% endblock %}
