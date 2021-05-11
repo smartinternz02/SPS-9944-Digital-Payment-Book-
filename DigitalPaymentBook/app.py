@@ -6,11 +6,11 @@ from flask_bcrypt import Bcrypt
 import config
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = '65f4f0838c7644381511d1ebd7f51622'
+app.config['SECRET_KEY'] = ''
 app.config['MYSQL_HOST'] = 'remotemysql.com'
-app.config['MYSQL_USER'] = 'MHhwhqx1hC'
-app.config['MYSQL_PASSWORD'] = 'BAK3Oi1qJ6'
-app.config['MYSQL_DB'] = 'MHhwhqx1hC'
+app.config['MYSQL_USER'] = ''
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = ''
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USERNAME'] = config.email
