@@ -1,0 +1,57 @@
+{% extends 'intro.html' %}
+{% block content %}
+<br>
+<br>
+<div class="col justify-content-center">
+  <div class="col-md-6">
+  <div class="card">
+  <header class="card-header">
+    <a href="/login" class="float-right btn btn-outline-primary mt-1">Log in</a>
+    <h4 class="card-title mt-2">Register</h4>
+  </header>
+  <article class="card-body">
+  <form method="POST">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Name</label>   
+          <input type="text" name="username" class="form-control" placeholder="Enter Your Name" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Email address</label>
+        <input type="email" name="email" class="form-control" placeholder="Enter Your email address" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Password</label>
+        <input type="password" name="password" class="form-control" placeholder="Enter a Password" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Confirm Password</label>
+        <input type="password" name="confpassword" class="form-control" placeholder="Re-enter Password" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" name="terms" id="terms" onchange="activateButton(this)">  By clicking this, I agree to 
+      <ul>
+        <li>Receive mails regarding the pending payments.</li>
+        <li>Store my purchase and payment details(It will used only within this site).</li>
+      </ul> 
+    </div>
+      <div class="form-group">
+          <button id="submit-btn" type="submit" class="btn btn-primary btn-block"> Register  </button>
+      </div>         
+  </form>
+  </article>
+  <div class="border-top card-body text-center"><b>{{ msg }}</b></div>
+  </div>
+  </div>
+  </div>
+  </div> 
+  <script>
+    document.querySelector('#submit-btn').disabled = true;
+    function activateButton(){
+      document.querySelector('#submit-btn').disabled = !document.querySelector('#submit-btn').disabled
+    }
+   </script>
+{% endblock %}

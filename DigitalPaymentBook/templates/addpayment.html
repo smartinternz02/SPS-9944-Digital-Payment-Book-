@@ -1,0 +1,42 @@
+{% extends 'nav.html' %}
+{% block content %}
+<br>
+<br>
+<div class="row justify-content-center">
+    <div class="col-md-6">
+    <div class="card">
+    <header class="card-header">
+      <h4 class="card-title mt-2">Add Payments</h4>
+    </header>
+    <article class="card-body">
+    <form method="POST">
+      <div class="form-row">
+        <div class="col form-group">
+           <label>Purchase ID</label><br>  
+            <select name="purchaseid"  class="form-control" required>
+              {% for purchase in purchases %}
+                <option value="{{ purchase[0] }}" class="form-control">{{ purchase[0] }}</option>
+              {% endfor %}
+            </select>
+        </div>
+        <div class="col form-group">
+          <label>Amount Paid</label>
+            <input type="number" name="amountpaid" class="form-control"  placeholder="Enter Amount Paid" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Payment Date</label>
+        <input type="date" name="paymentdate" class="form-control" placeholder="Enter Date of Payment" required>
+      </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block"> Add Payment  </button>
+        </div>         
+    </form>
+    </article>
+    <div class="border-top card-body text-center"><b>{{ msg }}</b></div>
+    </div>
+    </div>
+  
+    </div>
+    </div> 
+{% endblock %}
